@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AuraStore | Premium Full-Stack E-Commerce Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header / Navigation Bar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#" class="logo">
+        <i class="fa-solid fa-bolt logo-icon"></i>
+        <span>Aura<strong>Store</strong></span>
+      </a>
+
+      <div class="search-box">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Search premium tech, wearables, accessories...">
+        <button id="searchBtn" aria-label="Search"><i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+
+      <div class="nav-actions">
+        <button class="icon-btn theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <button class="cart-btn" id="cartToggleBtn">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>Cart</span>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Hero Banner -->
+  <section class="hero">
+    <div class="hero-content">
+      <span class="hero-tag"><i class="fa-solid fa-sparkles"></i> Next-Gen Tech Collection 2026</span>
+      <h1>Upgrade Your Daily Gear with Premium Precision</h1>
+      <p>Discover cutting-edge audio, mechanical keyboards, and smart accessories crafted for high-performance lifestyles.</p>
+      <div class="hero-cta">
+        <a href="#products-section" class="btn btn-primary"><i class="fa-solid fa-shop"></i> Explore Catalog</a>
+        <span class="promo-badge"><i class="fa-solid fa-ticket"></i> Code <strong>PROBO20</strong> for 20% OFF</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Catalog Section -->
+  <main class="main-container" id="products-section">
+    <div class="catalog-header">
+      <div class="categories-tabs" id="categoriesTabs">
+        <!-- Category chips loaded dynamically -->
+      </div>
+
+      <div class="sort-control">
+        <label for="sortBy"><i class="fa-solid fa-arrow-down-wide-short"></i> Sort By:</label>
+        <select id="sortBy">
+          <option value="featured">Featured</option>
+          <option value="price-low">Price: Low to High</option>
+          <option value="price-high">Price: High to Low</option>
+          <option value="rating">Highest Rated</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid" id="productsGrid">
+      <!-- Dynamic product cards -->
+    </div>
+  </main>
+
+  <!-- Product Detail Modal -->
+  <div class="modal-overlay" id="productModal">
+    <div class="modal-card">
+      <button class="modal-close" id="modalCloseBtn">&times;</button>
+      <div class="modal-body" id="modalBody">
+        <!-- Dynamic content -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Slide-over Drawer -->
+  <div class="cart-overlay" id="cartOverlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3><i class="fa-solid fa-bag-shopping"></i> Your Shopping Cart</h3>
+        <button class="close-cart-btn" id="closeCartBtn">&times;</button>
+      </div>
+
+      <div class="cart-items" id="cartItemsList">
+        <!-- Dynamic cart items -->
+      </div>
+
+      <div class="cart-footer">
+        <div class="promo-box">
+          <input type="text" id="promoCodeInput" placeholder="Enter Promo Code (e.g. PROBO20)">
+          <button id="applyPromoBtn">Apply</button>
+        </div>
+
+        <div class="price-summary">
+          <div class="price-row">
+            <span>Subtotal</span>
+            <span id="subtotalVal">$0.00</span>
+          </div>
+          <div class="price-row discount-row hidden" id="discountRow">
+            <span>Discount (20%)</span>
+            <span id="discountVal">-$0.00</span>
+          </div>
+          <div class="price-row">
+            <span>Estimated Tax (8%)</span>
+            <span id="taxVal">$0.00</span>
+          </div>
+          <div class="price-row total-row">
+            <span>Total</span>
+            <span id="totalVal">$0.00</span>
+          </div>
+        </div>
+
+        <button class="btn btn-primary checkout-btn" id="checkoutBtn">
+          <span>Proceed to Checkout</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <i class="fa-solid fa-bolt"></i> AuraStore
+        </a>
+        <p>Full-Stack E-Commerce Application developed by <strong>Terli Jogiswara Prabhas</strong>.</p>
+      </div>
+      <div class="footer-copy">
+        &copy; 2026 AuraStore. Built with Node.js, Express & Modern Web Standards.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

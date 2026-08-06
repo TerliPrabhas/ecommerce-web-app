@@ -1,0 +1,23 @@
+{
+  "name": "ecommerce-web-app",
+  "version": "1.0.0",
+  "description": "Full-Stack E-Commerce Web Application built with Node.js, Express, and Modern Vanilla Web Technologies",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5"
+  },
+  "keywords": [
+    "ecommerce",
+    "fullstack",
+    "nodejs",
+    "express",
+    "javascript"
+  ],
+  "author": "Terli Jogiswara Prabhas",
+  "license": "MIT"
+}
