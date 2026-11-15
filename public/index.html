@@ -3,29 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AuraStore | Premium Full-Stack E-Commerce Experience</title>
+  <title>AuraStore | Premium Full-Stack E-Commerce & GenAI Shopping Experience</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement">
+    <span><i class="fa-solid fa-sparkles"></i> <strong>GEN AI POWERED:</strong> Chat with Aura AI Shopping Concierge &bull; Use code <strong>PROBO20</strong> for 20% OFF!</span>
+  </div>
+
   <!-- Header / Navigation Bar -->
   <header class="navbar">
     <div class="nav-container">
       <a href="#" class="logo">
-        <i class="fa-solid fa-bolt logo-icon"></i>
+        <i class="fa-solid fa-bolt-lightning logo-icon"></i>
         <span>Aura<strong>Store</strong></span>
       </a>
 
       <div class="search-box">
         <i class="fa-solid fa-magnifying-glass search-icon"></i>
-        <input type="text" id="searchInput" placeholder="Search premium tech, wearables, accessories...">
+        <input type="text" id="searchInput" placeholder="Search tech, audio, keyboards, or ask Aura AI...">
         <button id="searchBtn" aria-label="Search"><i class="fa-solid fa-arrow-right"></i></button>
       </div>
 
       <div class="nav-actions">
+        <!-- AI Concierge Trigger Button -->
+        <button class="ai-assistant-btn" id="openAiChatBtn" title="Open Aura AI Shopping Concierge">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>Ask Aura AI</span>
+          <span class="ai-indicator"></span>
+        </button>
+
         <button class="icon-btn theme-toggle" id="themeToggle" title="Toggle Dark/Light Mode">
           <i class="fa-solid fa-moon"></i>
         </button>
@@ -39,94 +52,233 @@
     </div>
   </header>
 
-  <!-- Main Hero Banner -->
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <span class="hero-tag"><i class="fa-solid fa-sparkles"></i> Next-Gen Tech Collection 2026</span>
-      <h1>Upgrade Your Daily Gear with Premium Precision</h1>
-      <p>Discover cutting-edge audio, mechanical keyboards, and smart accessories crafted for high-performance lifestyles.</p>
+      <span class="hero-tag"><i class="fa-solid fa-microchip"></i> Next-Gen Tech & Gear Collection 2026</span>
+      <h1>Engineered for Builders, Creatives & Modern Lifestyles</h1>
+      <p>Discover studio-grade acoustics, mechanical typing precision, and intelligent accessories with live GenAI recommendations.</p>
+      
       <div class="hero-cta">
         <a href="#products-section" class="btn btn-primary"><i class="fa-solid fa-shop"></i> Explore Catalog</a>
+        <button class="btn btn-secondary" id="heroAiBtn"><i class="fa-solid fa-wand-magic-sparkles"></i> Consult AI Concierge</button>
         <span class="promo-badge"><i class="fa-solid fa-ticket"></i> Code <strong>PROBO20</strong> for 20% OFF</span>
       </div>
     </div>
   </section>
 
-  <!-- Filter & Catalog Section -->
+  <!-- Main Content & Catalog -->
   <main class="main-container" id="products-section">
+    <!-- Filter Controls Bar -->
     <div class="catalog-header">
       <div class="categories-tabs" id="categoriesTabs">
-        <!-- Category chips loaded dynamically -->
+        <!-- Dynamic Category Chips -->
       </div>
 
-      <div class="sort-control">
-        <label for="sortBy"><i class="fa-solid fa-arrow-down-wide-short"></i> Sort By:</label>
-        <select id="sortBy">
-          <option value="featured">Featured</option>
-          <option value="price-low">Price: Low to High</option>
-          <option value="price-high">Price: High to Low</option>
-          <option value="rating">Highest Rated</option>
-        </select>
+      <div class="filters-row">
+        <div class="filter-item">
+          <label for="sortBy"><i class="fa-solid fa-arrow-down-wide-short"></i> Sort:</label>
+          <select id="sortBy">
+            <option value="featured">Featured</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+            <option value="rating">Highest Rated</option>
+            <option value="name">Alphabetical</option>
+          </select>
+        </div>
       </div>
+    </div>
+
+    <!-- Active Filter Status -->
+    <div class="filter-status-bar" id="filterStatusBar" style="display: none;">
+      <span id="activeFilterText">Showing results</span>
+      <button class="clear-filters-btn" id="clearFiltersBtn">Reset Filters</button>
     </div>
 
     <!-- Products Grid -->
     <div class="products-grid" id="productsGrid">
-      <!-- Dynamic product cards -->
+      <!-- Dynamic Product Cards -->
     </div>
   </main>
 
-  <!-- Product Detail Modal -->
+  <!-- Product Detail & AI Insights Modal -->
   <div class="modal-overlay" id="productModal">
     <div class="modal-card">
       <button class="modal-close" id="modalCloseBtn">&times;</button>
       <div class="modal-body" id="modalBody">
-        <!-- Dynamic content -->
+        <!-- Dynamic Content loaded via JS -->
       </div>
     </div>
   </div>
 
-  <!-- Cart Slide-over Drawer -->
+  <!-- Shopping Cart Slide-over Drawer -->
   <div class="cart-overlay" id="cartOverlay">
     <div class="cart-drawer">
       <div class="cart-header">
-        <h3><i class="fa-solid fa-bag-shopping"></i> Your Shopping Cart</h3>
+        <h3><i class="fa-solid fa-bag-shopping"></i> Your Shopping Bag</h3>
         <button class="close-cart-btn" id="closeCartBtn">&times;</button>
       </div>
 
       <div class="cart-items" id="cartItemsList">
-        <!-- Dynamic cart items -->
+        <!-- Dynamic Cart Items -->
       </div>
 
       <div class="cart-footer">
         <div class="promo-box">
-          <input type="text" id="promoCodeInput" placeholder="Enter Promo Code (e.g. PROBO20)">
-          <button id="applyPromoBtn">Apply</button>
+          <div class="promo-input-wrap">
+            <i class="fa-solid fa-ticket"></i>
+            <input type="text" id="promoCodeInput" placeholder="Enter coupon (e.g. PROBO20)">
+            <button id="applyPromoBtn">Apply</button>
+          </div>
+          <div class="promo-feedback" id="promoFeedback"></div>
         </div>
 
-        <div class="price-summary">
-          <div class="price-row">
+        <div class="cart-summary">
+          <div class="summary-line">
             <span>Subtotal</span>
             <span id="subtotalVal">$0.00</span>
           </div>
-          <div class="price-row discount-row hidden" id="discountRow">
-            <span>Discount (20%)</span>
+          <div class="summary-line discount" id="discountRow" style="display: none;">
+            <span>Discount (PROBO20 20%)</span>
             <span id="discountVal">-$0.00</span>
           </div>
-          <div class="price-row">
+          <div class="summary-line">
             <span>Estimated Tax (8%)</span>
             <span id="taxVal">$0.00</span>
           </div>
-          <div class="price-row total-row">
+          <div class="summary-line total">
             <span>Total</span>
             <span id="totalVal">$0.00</span>
           </div>
         </div>
 
-        <button class="btn btn-primary checkout-btn" id="checkoutBtn">
-          <span>Proceed to Checkout</span>
-          <i class="fa-solid fa-arrow-right"></i>
+        <button class="checkout-btn" id="checkoutBtn">
+          <i class="fa-solid fa-lock"></i> Proceed to Checkout
         </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal-card checkout-card">
+      <button class="modal-close" id="checkoutCloseBtn">&times;</button>
+      <div class="checkout-header">
+        <h2><i class="fa-solid fa-shield-halved"></i> Secure Checkout</h2>
+        <p>Complete your shipping and payment information to place your order.</p>
+      </div>
+
+      <form class="checkout-form" id="checkoutForm">
+        <div class="form-section">
+          <h3>1. Shipping Information</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" id="shipName" placeholder="Terli Jogiswara Prabhas" required>
+            </div>
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" id="shipEmail" placeholder="prabhasterli@gmail.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Street Address *</label>
+            <input type="text" id="shipAddress" placeholder="NIT Agartala Campus, Jirania" required>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>City *</label>
+              <input type="text" id="shipCity" placeholder="Agartala" required>
+            </div>
+            <div class="form-group">
+              <label>Zip / Postal Code *</label>
+              <input type="text" id="shipZip" placeholder="799046" required>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <h3>2. Payment Method</h3>
+          <div class="payment-options">
+            <label class="pay-option active">
+              <input type="radio" name="payMethod" value="Credit Card" checked>
+              <i class="fa-solid fa-credit-card"></i> Credit / Debit Card (Simulated)
+            </label>
+            <label class="pay-option">
+              <input type="radio" name="payMethod" value="UPI / GPay">
+              <i class="fa-solid fa-mobile-screen-button"></i> UPI / Google Pay / PhonePe
+            </label>
+            <label class="pay-option">
+              <input type="radio" name="payMethod" value="Cash on Delivery">
+              <i class="fa-solid fa-truck-ramp-box"></i> Cash on Delivery
+            </label>
+          </div>
+        </div>
+
+        <div class="checkout-actions">
+          <button type="submit" class="btn btn-primary btn-block" id="confirmOrderBtn">
+            <i class="fa-solid fa-check"></i> Place & Confirm Order
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Success Modal -->
+  <div class="modal-overlay" id="orderSuccessModal">
+    <div class="modal-card success-card">
+      <div class="success-icon-wrap">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <h2>Order Confirmed!</h2>
+      <p class="order-id-label">Order Reference: <strong id="successOrderId">ORD-000000</strong></p>
+      <p class="success-desc">Thank you for shopping at AuraStore. Your items have been packed and will ship out shortly.</p>
+      
+      <div class="receipt-box" id="receiptBox">
+        <!-- Receipt details populated via JS -->
+      </div>
+
+      <button class="btn btn-primary btn-block" id="continueShoppingBtn">
+        <i class="fa-solid fa-arrow-left"></i> Continue Shopping
+      </button>
+    </div>
+  </div>
+
+  <!-- Aura GenAI Shopping Concierge Floating Drawer -->
+  <div class="ai-drawer-overlay" id="aiDrawerOverlay">
+    <div class="ai-drawer">
+      <div class="ai-drawer-header">
+        <div class="ai-header-info">
+          <div class="ai-avatar">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <div>
+            <h4>Aura AI Concierge</h4>
+            <span class="ai-status"><span class="pulse-dot"></span> Online &bull; GenAI Shopping Engine</span>
+          </div>
+        </div>
+        <button class="close-ai-btn" id="closeAiBtn">&times;</button>
+      </div>
+
+      <div class="ai-chat-messages" id="aiChatMessages">
+        <div class="ai-message bot">
+          <div class="message-bubble">
+            <p>👋 Hello! I'm <strong>Aura</strong>, your intelligent GenAI shopping advisor. Tell me what you're looking for, your budget, or your work setup, and I'll find your perfect gear!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Prompt Suggestion Chips -->
+      <div class="ai-quick-prompts" id="aiQuickPrompts">
+        <button class="prompt-chip" data-prompt="Best gear for software engineers"><i class="fa-solid fa-code"></i> Developer Setup</button>
+        <button class="prompt-chip" data-prompt="Find wireless headphones under $200"><i class="fa-solid fa-headphones"></i> Audio Under $200</button>
+        <button class="prompt-chip" data-prompt="Show budget desk accessories"><i class="fa-solid fa-tags"></i> Budget Tech</button>
+        <button class="prompt-chip" data-prompt="How do I get a 20% discount?"><i class="fa-solid fa-percent"></i> 20% Discount Code</button>
+      </div>
+
+      <div class="ai-input-bar">
+        <input type="text" id="aiChatInput" placeholder="Ask Aura: e.g. Best keyboard for fast typing...">
+        <button id="sendAiBtn" aria-label="Send"><i class="fa-solid fa-paper-plane"></i></button>
       </div>
     </div>
   </div>
@@ -139,13 +291,21 @@
     <div class="footer-container">
       <div class="footer-brand">
         <a href="#" class="logo">
-          <i class="fa-solid fa-bolt"></i> AuraStore
+          <i class="fa-solid fa-bolt-lightning logo-icon"></i>
+          <span>Aura<strong>Store</strong></span>
         </a>
-        <p>Full-Stack E-Commerce Application developed by <strong>Terli Jogiswara Prabhas</strong>.</p>
+        <p>Production-grade Full-Stack E-Commerce web application built with Node.js, Express, MongoDB, and integrated Generative AI Shopping Assistant.</p>
       </div>
-      <div class="footer-copy">
-        &copy; 2026 AuraStore. Built with Node.js, Express & Modern Web Standards.
+      <div class="footer-links">
+        <h4>Developer & Architect</h4>
+        <p><strong>Terli Jogiswara Prabhas</strong></p>
+        <p>National Institute of Technology, Agartala (CSE)</p>
+        <p><a href="https://github.com/TerliPrabhas" target="_blank"><i class="fa-brands fa-github"></i> github.com/TerliPrabhas</a></p>
+        <p><a href="mailto:prabhasterli@gmail.com"><i class="fa-solid fa-envelope"></i> prabhasterli@gmail.com</a></p>
       </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 AuraStore &bull; Developed by Terli Jogiswara Prabhas. All rights reserved.</p>
     </div>
   </footer>
 
