@@ -3,7 +3,12 @@
 > **Developed by:** Terli Jogiswara Prabhas  
 > **Institution:** National Institute of Technology, Agartala (CSE, CGPA: 8.23)  
 > **Contact:** [prabhasterli@gmail.com](mailto:prabhasterli@gmail.com) | +91-8074811487  
-> **Profiles:** [GitHub](https://github.com/TerliPrabhas) | [LinkedIn](https://linkedin.com/in/TerliPrabhas)
+> **Profiles:** [GitHub](https://github.com/TerliPrabhas) | [LinkedIn](https://www.linkedin.com/in/prabhasterli1899/)
+
+
+> **Permanent Live Deployment:** [https://ecommerce-web-app-rya0.onrender.com](https://ecommerce-web-app-rya0.onrender.com)  
+> [![Live Demo](https://img.shields.io/badge/Live_Demo-AuraStore-00C853?style=for-the-badge&logo=render&logoColor=white)](https://ecommerce-web-app-rya0.onrender.com)
+> [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/TerliPrabhas/ecommerce-web-app)
 
 ---
 
